@@ -1,5 +1,5 @@
 {
-  "homepage": "http://lafeen-html.github.io/OnlineStoreSultan",
+  "homepage": "https://lafeen-html.github.io/OnlineStoreSultan/",
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
@@ -17,7 +17,7 @@
     "react-dom": "^18.2.0",
     "react-inspector": "^6.0.1",
     "react-router-dom": "^6.9.0",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^2.1.3",
     "react-switch": "^7.0.0",
     "style-loader": "^3.3.2",
     "tsx": "^3.12.6",
