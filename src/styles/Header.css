@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 0;
+}
+
+body {
+    background-color: #fff;
+    color: #111;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+}
+
+.wrapper {
+    width: 1360px;
+    margin: 0 auto;
+}
+
+.header-top {
+    align-items: center;
+    display: flex;
+    height: 60px;
+    justify-content: space-between;
+}
+
+.header-contacts {
+    display: flex;
+    justify-content: space-between;
+    width: 494px;
+}
+
+.adress, .email {
+    display: flex;
+    font-weight: 600;
+    gap: 15px;
+}
+
+.adress span, .email span {
+    color: #3f4e65;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.location-icon{
+    height: 30%;
+    margin-top: 25px;
+}
+
+.adress-text, 
+.email-text {
+    display: flex;
+    flex-direction: column;
+    margin-top: 21px;
+}
+
+.adress-text{
+    width: 275px;
+}
+
+.email-text{
+    width: 178px;
+}
+
+ul li {
+    list-style: none;
+    display: inline;
+    border-right: 1px dashed rgba(63, 78, 101, 0.1);
+    padding: 4px 30px 4px 0;
+}
+
+li:last-child {
+    border-right: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    display: flex;
+    justify-content: space-between;
+    width: 512px;
+}
+
+.header-bottom {
+    display: inline-flex;
+    width: 100%;
+    height: 108px;
+    border-top: 2px solid rgba(63, 78, 101, 0.1);
+    border-bottom: 2px solid rgba(63, 78, 101, 0.1);
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.logo-sultan {
+    margin-right: 38px;
+}
+
+button.catalog{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffc85e;
+    border: none;
+    border-radius: 80px;
+    color: #fff;
+    cursor: pointer;
+    font-family: 'Inter',sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    height: 59px;
+    width: 192px;
+    margin-right: 15px;
+}
+
+button.search,
+button.footer-search{
+    cursor: pointer;
+}
+
+.catalog-icon {
+    height: 25%;
+    margin-left: 12px;
+}
+
+.search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-search{
+    background-color: #ededed;
+    border: none;
+    border-radius: 35px;
+    color: #5c6370;
+    font-family: 'Inter',sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    height: 59px;
+    padding-left: 20px;
+    width: 263px;
+    margin-right: -50px;
+}
+
+.search-icon {
+background-color: #EDEDED;
+}
+
+.contacts{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-left: 35px;
+    line-height: 18px;
+}
+
+span.tel{
+    font-weight: 600;
+}
+
+span.work-time{
+    font-size: 12px;
+    font-weight: 300;
+}
+
+a.order-call{
+    font-size: 10px;
+    font-weight: 400;
+    text-decoration: underline;
+}
+
+button.price-list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffc85e;
+    border: none;
+    border-radius: 80px;
+    color: #fff;
+    cursor: pointer;
+    font-family: 'Inter',sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    height: 59px;
+    width: 192px;
+    margin-right: 15px;
+}
+
+.contacts-icon {
+    margin-top: -15px;
+    margin-left: 12px;
+    margin-right: 50px;
+}
+
+.price-list-icon{
+    margin-left: 12px;
+}
+
+.header-basket{
+    display: flex;
+    align-items: center;
+}
+
+.header-basket-main{
+    display: flex;
+}
+
+.header-basket-icon{
+    margin-right: 29px;
+}
+
+.header-basket-info{
+    line-height: 20px;
+}
+
+.header-basket-name {
+    font-size: 12px;
+    font-weight: 300;
+    color: #3f4e65;
+}
+
+.header-basket-price{
+    font-weight: 600;
+    color: #3f4e65;
+}

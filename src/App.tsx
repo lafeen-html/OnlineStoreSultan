@@ -1,26 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Catalog from "./pages/Catalog";
+import ProductCard from "./pages/ProductCard";
+import Basket from "./pages/Basket";
+import { ItemTypes } from './components/ItemTypes';
 
-function App() {
+
+const App = (props: {data: ItemTypes[]}) => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <BrowserRouter>
+        <Routes>
+          <Route index element={<Catalog data={props.data}/>}></Route>
+          <Route path="/" element={<Catalog data={props.data}/>}></Route>
+          <Route path="catalog/:id" element={<ProductCard data={props.data}/>}></Route>
+          <Route path="catalog/" element={<Catalog data={props.data}/>}></Route>
+          <Route path="basket" element={<Basket />}></Route>
+        </Routes>
+      </BrowserRouter>
     </div>
-  );
+
+  )
 }
 
-export default App;
+export default App
