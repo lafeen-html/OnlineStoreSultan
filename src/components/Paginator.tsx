@@ -1,5 +1,7 @@
-import React, { SetStateAction } from 'react';
+import React from 'react';
 import '../styles/Paginator.css';
+import arrowLeft from './/../images/arrow-left.svg';
+import arrowRight from './/../images/arrow-right.svg';
 
 const Paginator = ({ totalItems, itemsPerPage, currentPage, setCurrentPage }: any) => {
     let pages: number[] = [];
@@ -7,10 +9,7 @@ const Paginator = ({ totalItems, itemsPerPage, currentPage, setCurrentPage }: an
     for (let pagenumber = 1; pagenumber <= allPages; pagenumber++) {
         pages.push(pagenumber);
     }
-
-    const toTopOnClick = () => {
-        window.scrollTo({ top: 260, behavior: "smooth" });
-    }
+    const toTopOnClick = () => { window.scrollTo({ top: 260, behavior: "smooth" }) }
 
 
     return (
@@ -23,7 +22,7 @@ const Paginator = ({ totalItems, itemsPerPage, currentPage, setCurrentPage }: an
                     }
                 }}
                     className="pagination-button">
-                    <img className="arrow-left" src='http://localhost:3000/arrow-left.svg' alt="" />
+                    <img className="arrow-left" src={arrowLeft} alt="" />
                 </button>
                 <div className="pagination-pages">
                     {pages.map((page: number, id: number) => {
@@ -49,7 +48,7 @@ const Paginator = ({ totalItems, itemsPerPage, currentPage, setCurrentPage }: an
                     }
                 }}
                     className="pagination-button">
-                    <img className="arrow-right" src='http://localhost:3000/arrow-right.svg' alt="" />
+                    <img className="arrow-right" src={arrowRight} alt="" />
                 </button>
             </div>
         </div>

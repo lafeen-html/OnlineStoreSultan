@@ -1,14 +1,14 @@
-h1 .basket-title{
+h1 .basket-title {
     text-transform: capitalize;
     margin-top: 50px;
 }
 
-.basket-order{
+.basket-order {
     margin-top: 50px;
     margin-bottom: 100px;
 }
 
-.basket-order-button{
+.basket-order-button {
     margin-left: 40px;
     padding-left: 20px;
     display: flex;
@@ -19,9 +19,15 @@ h1 .basket-title{
     border-radius: 80px;
     color: #fff;
     cursor: pointer;
-    font-family: 'Inter',sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 14px;
     font-weight: 700;
     height: 45px;
     width: 153px;
+}
+
+@media (max-width: 900px) {
+    .basket-title-text {
+        margin-top: 120px;
+    }
 }

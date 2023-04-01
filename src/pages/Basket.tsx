@@ -4,12 +4,12 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { Link } from "react-router-dom";
 import ItemBasket from "../components/ItemBasket";
+import basketDotedLine from './/../images/basket-doted-line.svg';
 
 
 const Basket = () => {
-  const basketJSON: any = JSON.parse(localStorage.getItem("basket") || "")
+  const basketJSON: any = JSON.parse(localStorage.getItem("basket") || "");
   const [basketItems, setCartItems] = useState(basketJSON);
-
 
   function clearBasket(e: React.MouseEvent<HTMLButtonElement>) {
     localStorage.setItem("basket", JSON.stringify([]),);
@@ -27,7 +27,6 @@ const Basket = () => {
           <Link to="/catalog">Главная</Link>
           <span className="catalog-menu">Корзина</span>
         </div>
-
 
         <div className="basket-title">
           <h1 className="basket-title-text">Корзина</h1>
@@ -53,7 +52,7 @@ const Basket = () => {
           })}
         </div>
 
-        <img className="basket-doted-line" src='http://localhost:3000/basket-doted-line.svg' alt="" />
+        <img className="basket-doted-line" src={basketDotedLine} alt="" />
         <div className="basket-order">
           <button type="submit" onClick={clearBasket} className="basket-order-button">Оформить заказ</button>
         </div>

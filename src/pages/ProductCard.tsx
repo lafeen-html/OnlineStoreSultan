@@ -4,15 +4,24 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { Link, useParams } from "react-router-dom";
 import { ItemTypes } from "../components/ItemTypes";
+import purshaseBasket from './/../images/purshase-basket.svg';
+import share from './/../images/share.svg';
+import itemPriceList from './/../images/item-price-list.svg';
+import dotedLine from './/../images/doted-line.svg';
+import boxOpen from './/../images/box-open.svg';
+import bottle from './/../images/bottle.svg';
 
 
 const ProductCard = (props: { data: ItemTypes[] }) => {
   const [itemCard, setItemCard] = useState(props.data);
   const params = useParams();
+  const itemImg = itemCard[0].size_type == "мл" ? bottle : boxOpen;
+  const [amountItems, setAmountItems] = useState<number>(1);
+  const handleIncreaseAmountItems = () => { setAmountItems(amountItems + 1) };
+  const handleDecreaseAmountItems = () => { setAmountItems(amountItems - 1) };
+  const [inBasket, setInBasket] = useState(false);
+  const [count, setCount] = useState(1);
 
-  let bottle = <img src='http://localhost:3000/bottle.svg' />
-  let box = <img src='http://localhost:3000/box-open.svg' />
-  const itemImg = itemCard[0].size_type == "мл" ? bottle : box;
 
   useEffect(() => {
     let id = Object.values(params).join("");
@@ -21,46 +30,34 @@ const ProductCard = (props: { data: ItemTypes[] }) => {
     setItemCard(copyItemCard);
   }, [])
 
-  const [amountItems, setAmountItems] = useState<number>(1);
-  const handleIncreaseAmountItems = () => {
-		setAmountItems(amountItems + 1)
-	}
-  
-	const handleDecreaseAmountItems = () => {
-		setAmountItems(amountItems - 1)
-	}
 
-  const [inBasket, setInBasket] = useState(false);
-  const [count, setCount] = useState(1);
   function handleAddToBasket(e: React.MouseEvent<HTMLButtonElement>) {
     const target = e.target as HTMLButtonElement;
     if (target && target.textContent) {
-        setInBasket(!inBasket)
-        const arr: any = localStorage.getItem("basket")
-        const parsedArr: any[] = JSON.parse(arr ? arr : "[]")
-        if (parsedArr.length) {
-            let contains = false
-            parsedArr.map((el: { id: any; count: number }) => {
-                if (el.id == itemCard[0].id) {
-                    el.count += 1
-                    setCount(el.count)
-                    contains = true
-                }
-            })
-            if (!contains) {
-                parsedArr.push(itemCard[0]);
-                alert('Товар добавлен в корзину!');
-            }
-        } else {
-            parsedArr.push(itemCard[0]);
-            alert('Товар добавлен в корзину!');
+      setInBasket(!inBasket)
+      const arr: any = localStorage.getItem("basket")
+      const parsedArr: any[] = JSON.parse(arr ? arr : "[]")
+      if (parsedArr.length) {
+        let contains = false
+        parsedArr.map((el: { id: any; count: number }) => {
+          if (el.id == itemCard[0].id) {
+            el.count += 1
+            setCount(el.count)
+            contains = true
+          }
+        })
+        if (!contains) {
+          parsedArr.push(itemCard[0]);
+          alert('Товар добавлен в корзину!');
         }
-        const stringifiedArr = JSON.stringify(parsedArr);
-        localStorage.setItem("basket", stringifiedArr);
+      } else {
+        parsedArr.push(itemCard[0]);
+        alert('Товар добавлен в корзину!');
+      }
+      const stringifiedArr = JSON.stringify(parsedArr);
+      localStorage.setItem("basket", stringifiedArr);
     }
-}
-
-
+  }
 
 
   return (
@@ -90,7 +87,7 @@ const ProductCard = (props: { data: ItemTypes[] }) => {
               <span className="product_description">{itemCard[0].description}</span>
             </h1>
 
-            <h6 className="item-size"><span>{itemImg} </span>{itemCard[0].size} <span>{itemCard[0].size_type}</span></h6>
+            <h6 className="item-size"><img src={itemImg} />{itemCard[0].size} <span>{itemCard[0].size_type}</span></h6>
 
             <span className="product-item-price">{itemCard[0].price} ₸</span>
 
@@ -102,19 +99,19 @@ const ProductCard = (props: { data: ItemTypes[] }) => {
 
             <div className="product-item-button">
               <button type="submit" onClick={handleAddToBasket} className="product-button-item">В корзину</button>
-              <img className="purshase-basket" src='http://localhost:3000/purshase-basket.svg' alt="" />
+              <img className="purshase-basket" src={purshaseBasket} alt="" />
             </div>
 
             <div className="product-card-info">
               <button className="item-button-share">
-                <img className="share" src='http://localhost:3000/share.svg' alt="" />
+                <img className="share" src={share} alt="" />
               </button>
               <div className="product-item-info">
                 <span>При покупке от <span style={{ fontWeight: 800 }}>10 000 ₸</span> бесплатная доставка по Кокчетаву и области</span>
               </div>
               <button className="item-price-list">
                 Прайс-лист
-                <img className="item-price-list-img" src='http://localhost:3000/item-price-list.svg' alt="" />
+                <img className="item-price-list-img" src={itemPriceList} alt="" />
               </button>
             </div>
 
@@ -128,7 +125,7 @@ const ProductCard = (props: { data: ItemTypes[] }) => {
             <h2 className="description-item">Описание</h2>
             <div className="description-item-group">
               <span className="description-item-text">{itemCard[0].description}</span>
-              <img className="doted-line" src='http://localhost:3000/doted-line.svg' alt="" />
+              <img className="doted-line" src={dotedLine} alt="" />
             </div>
 
             <h2 className="description-item">Характеристики</h2>

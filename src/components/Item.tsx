@@ -1,17 +1,15 @@
 import React, { useState } from 'react';
 import '../styles/Item.css';
 import { Link } from "react-router-dom";
-import { ItemTypes } from './ItemTypes';
+import purshaseBasket from './/../images/purshase-basket.svg';
+import boxOpen from './/../images/box-open.svg';
+import bottle from './/../images/bottle.svg';
 
 const Item = ({
 	id = "", image_url = "", product_name = "", size = "", size_type = "",
 	brand = "", description = "", barcode = "", manufacturer = "", price = ""
 }) => {
-	let bottle = <img src='http://localhost:3000/bottle.svg' />
-	let box = <img src='http://localhost:3000/box-open.svg' />
-	const itemImg = size_type == "мл" ? bottle : box;
-
-
+	const itemImg = size_type == "мл" ? bottle : boxOpen;
 	const [inCart, setInCart] = useState(false);
 	const [count, setCount] = useState(1);
 
@@ -45,15 +43,11 @@ const Item = ({
 	}
 
 
-	
-
-
 	return (
 		<div className="item">
 			<img className="image_url" src={image_url} alt="{brand}" />
 			<div className="item-info">
-				<h6 className="item-size"><span>{itemImg} </span>{size} <span>{size_type}</span></h6>
-				
+				<h6 className="item-size"><img src={itemImg} />{size} <span>{size_type}</span></h6>
 				<Link to={`${id}`}>
 					<h3 className="item-name"><span className="item-span">{product_name} </span> {description}</h3>
 				</Link>
@@ -65,7 +59,7 @@ const Item = ({
 				<h3 className="purchase-price">{price} ₸</h3>
 				<div className="purchase-button">
 					<button className="button-item" onClick={handleAddToCart}>В корзину</button>
-					<img className="purshase-basket" src='http://localhost:3000/purshase-basket.svg' alt="" />
+					<img className="purshase-basket" src={purshaseBasket} alt="" />
 				</div>
 			</div>
 		</div>

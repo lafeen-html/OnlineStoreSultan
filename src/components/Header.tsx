@@ -1,6 +1,14 @@
 import React from 'react';
 import '../styles/Header.css';
 import { Link } from "react-router-dom";
+import contactsGirl from './/../images/contacts-girl.svg';
+import locationIcon from './/../images/location-icon.svg';
+import mailIcon from './/../images/mail-icon.svg';
+import sultanLogoHeader from './/../images/sultan-logo-header.svg';
+import catalogFrame from './/../images/catalog-frame.svg';
+import searchIcon from './/../images/search-icon.svg';
+import priceListIcon from './/../images/price-list-icon.svg';
+import basketIcon from './/../images/basket-icon.svg';
 
 
 const Header = () => {
@@ -14,7 +22,7 @@ const Header = () => {
           <div className="header-contacts">
 
             <div className="adress">
-              <img className="location-icon" src='http://localhost:3000/location-icon.svg' alt="" />
+              <img className="location-icon" src={locationIcon} alt="" />
               <div className="adress-text">
                 г. Кокчетав, ул. Ж. Ташенова 129Б
                 <span>(Рынок Восточный)</span>
@@ -22,7 +30,7 @@ const Header = () => {
             </div>
 
             <div className="email">
-              <img className="mail-icon" src='http://localhost:3000/mail-icon.svg' alt="" />
+              <img className="mail-icon" src={mailIcon} alt="" />
               <div className="email-text">
                 opt.sultan@mail.ru
                 <span>На связи в любое время</span>
@@ -32,34 +40,40 @@ const Header = () => {
           </div>
 
           <nav className="navigation">
-            <ul>
-              <li><a href=''>O компании</a></li>
-              <li><a href=''>Доставка и оплата</a></li>
-              <li><a href=''>Возврат</a></li>
-              <li><a href=''>Контакты</a></li>
-            </ul>
+            <div className="hamburger-menu">
+              <input id="menu__toggle" type="checkbox" />
+              <label className="menu__btn" htmlFor="menu__toggle">
+                <span></span>
+              </label>
+              <ul className="nav menu__box">
+                <li><a className="menu__item">O компании</a></li>
+                <li><a className="menu__item">Доставка и оплата</a></li>
+                <li><a className="menu__item">Возврат</a></li>
+                <li><a className="menu__item">Контакты</a></li>
+              </ul>
+            </div>
           </nav>
 
-        </div>
 
+        </div>
 
         <div className="header-bottom">
 
           <div className="logo-sultan">
-            <img className="sultan-icon" src='http://localhost:3000/sultan-logo-header.svg' alt="" />
+            <img className="sultan-icon" src={sultanLogoHeader} alt="" />
           </div>
 
           <Link to="/catalog">
-          <button className="catalog">
-            Каталог
-            <img className="catalog-icon" src='http://localhost:3000/catalog-frame.svg' alt="" />
-          </button>
+            <button className="catalog">
+              Каталог
+              <img className="catalog-icon" src={catalogFrame} alt="" />
+            </button>
           </Link>
 
           <div className="search">
             <input className="input-search" placeholder="Поиск..." />
             <button className="search">
-              <img className="search-icon" src='http://localhost:3000/search-icon.svg' alt="" />
+              <img className="search-icon" src={searchIcon} alt="" />
             </button>
           </div>
 
@@ -69,16 +83,16 @@ const Header = () => {
             <a className="order-call" href=''>Заказать звонок</a>
           </div>
 
-          <img className="contacts-icon" src='http://localhost:3000/contacts-girl.svg' alt="" />
+          <img className="contacts-icon" src={contactsGirl} alt="" />
 
           <button className="price-list">
             Прайс-лист
-            <img className="price-list-icon" src='http://localhost:3000/price-list-icon.svg' alt="" />
+            <img className="price-list-icon" src={priceListIcon} alt="" />
           </button>
 
           <div className="header-basket">
             <Link to="/basket" className="header-basket-main">
-              <img className="header-basket-icon" src='http://localhost:3000/basket-icon.svg' alt="basket" />
+              <img className="header-basket-icon" src={basketIcon} alt="basket" />
               <div className="header-basket-info">
                 <div className="header-basket-name">Корзина</div>
                 <div className="header-basket-price">0 ₸</div>

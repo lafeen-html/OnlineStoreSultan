@@ -1,4 +1,4 @@
-.basket-item-main{
+.basket-item-main {
     display: flex;
     align-items: center;
     margin-left: 20px;
@@ -6,20 +6,20 @@
     justify-content: space-between;
 }
 
-.basket-title{
+.basket-title {
     margin-bottom: 50px;
 }
 
-.basket-item:first-child{
+.basket-item:first-child {
     margin-top: 50px;
 }
 
-.basket-list:last-child{
+.basket-list:last-child {
     border-bottom: 1px dashed rgba(63, 78, 101, 0.3);
     margin-bottom: 50px;
 }
 
-.basket-item{
+.basket-item {
     display: flex;
     margin-top: 50px;
     margin-bottom: 50px;
@@ -32,42 +32,42 @@
     width: 20%;
 }
 
-.basket-info{
+.basket-info {
     display: flex;
     flex-direction: column;
     width: 300px;
     margin-top: -72px;
 }
 
-.basket-info-text{
+.basket-info-text {
     display: flex;
     flex-direction: column;
     margin-top: 9px;
 }
 
-.basket-item-name{
+.basket-item-name {
     font-weight: 700;
     font-size: 30px;
     margin-bottom: 10px;
 }
 
-.basket-item-description{
+.basket-item-description {
     color: #3F4E65;
     font-size: 12px;
     font-weight: 300;
 }
 
-.basket-delete-button{
-background: transparent;
-cursor: pointer;
+.basket-delete-button {
+    background: transparent;
+    cursor: pointer;
 }
 
-.basket-item-purchase{
+.basket-item-purchase {
     display: flex;
     align-items: flex-start;
 }
 
-.basket-delete-button{
+.basket-delete-button {
     margin-top: -66px;
     margin-left: 44px;
 }
@@ -104,9 +104,57 @@ cursor: pointer;
     cursor: pointer;
 }
 
-.basket-item-purchase-price{
+.basket-item-purchase-price {
     font-weight: 700;
     font-size: 30px;
     margin-right: 44px;
     margin-left: 44px;
+}
+
+@media (max-width: 900px) {
+    .basket-item {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .basket-item-main {
+        margin-top: 70px;
+    }
+
+    .basket-price-selector {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .basket-item-purchase-price {
+        font-weight: 700;
+        font-size: 20px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .basket-delete-button {
+        margin-left: 30px;
+    }
+}
+
+@media (max-width: 900px) {
+    .basket-item-main {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        align-content: flex-start;
+    }
+
+    .basket-item {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        align-content: flex-start;
+    }
+
+    .basket-image_url {
+        width: 60%;
+        margin-top: 5px;
+    }
 }

@@ -10,6 +10,7 @@
 }
 
 .product-image {
+    margin-top: 40px;
     height: 450px;
     margin-right: 40px;
 }
@@ -18,7 +19,7 @@
     color: #1FD85D;
 }
 
-.product_name{
+.product_name {
     margin-top: 10px;
     margin-bottom: 10px;
 }
@@ -58,7 +59,7 @@
     cursor: pointer;
 }
 
-.product-item-button{
+.product-item-button {
     margin: -66px 0 20px 230px;
 }
 
@@ -75,7 +76,7 @@
     margin-right: 10px;
 }
 
-.product-button-item{
+.product-button-item {
     text-transform: uppercase;
     margin-left: 40px;
     padding-left: 25px;
@@ -87,7 +88,7 @@
     border-radius: 80px;
     color: #fff;
     cursor: pointer;
-    font-family: 'Inter',sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 14px;
     font-weight: 700;
     height: 45px;
@@ -99,7 +100,7 @@
     margin-bottom: 35px;
 }
 
-.product-item-info{
+.product-item-info {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -124,7 +125,7 @@
     border: none;
     box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.1);
     cursor: pointer;
-    font-family: 'Inter',sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 14px;
     font-weight: 700;
     height: 77px;
@@ -134,20 +135,20 @@
     margin-right: 15px;
 }
 
-.item-main-info{
+.item-main-info {
     display: flex;
     flex-direction: column;
     line-height: 30px;
     margin-bottom: 30px;
 }
 
-.description-item{
+.description-item {
     margin-bottom: 20px;
 }
 
 .description-item-group {
- display: flex;
- flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 .description-item-text {
@@ -156,7 +157,7 @@
     font-weight: 300;
 }
 
-.doted-line{
+.doted-line {
     margin: 20px 0 20px 0;
     width: 269px;
 }
@@ -168,6 +169,50 @@
     margin-bottom: 50px;
 }
 
-.specifications-item{
+.specifications-item {
     margin-bottom: 15px;
+}
+
+@media (max-width: 900px) {
+    .main-header {
+        width: 500px;
+    }
+
+    .product {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 480px) {
+    .products {
+        display: flex;
+        flex-direction: column;
+        margin-left: 0;
+    }
+
+    .product {
+        display: flex;
+        flex-wrap: wrap;
+        width: 200px;
+    }
+
+    .product-info {
+        display: flex;
+        width: 300px;
+        flex-direction: column;
+    }
+
+    .product-image {
+        height: 320px;
+    }
+
+    .product-button-item {
+        margin-left: -65px;
+    }
+
+    .product-item-info,
+    .item-price-list {
+        font-size: 10px;
+    }
 }

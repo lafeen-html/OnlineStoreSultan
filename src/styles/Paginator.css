@@ -1,35 +1,35 @@
-.items-pages{
+.items-pages {
     display: flex;
 }
 
-.pagination{
+.pagination {
     display: flex;
     flex-direction: row;
     margin-left: 530px;
 }
 
-.pagination-button{
+.pagination-button {
     background: transparent;
     cursor: pointer;
     height: 35px;
     width: 35px;
 }
 
-.items-page{
+.items-page {
     background-color: #fff;
 }
 
-.pagination-pages{
+.pagination-pages {
     display: flex;
     align-items: center;
     gap: 23px;
 }
 
-.items-page:hover{
+.items-page:hover {
     cursor: pointer;
 }
 
-.items-page.active{
+.items-page.active {
     width: 35px;
     height: 35px;
     border-radius: 50px;

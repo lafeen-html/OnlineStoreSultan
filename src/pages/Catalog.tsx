@@ -1,13 +1,12 @@
-import React, { ReactHTML, useEffect, useState, useCallback, useMemo } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../styles/Catalog.css';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { ItemTypes } from "../components/ItemTypes";
 import Item from "../components/Item";
-import { Link, useParams } from "react-router-dom";
 import Paginator from '../components/Paginator';
-import CatalogOfProducts from '../components/CatalogOfProducts';
-import { setConstantValue } from 'typescript';
+import searchIcon from './/../images/search-icon.svg';
+import trashButton from './/../images/trash-button.svg';
 
 
 const Catalog = (props: { data: ItemTypes[] }) => {
@@ -17,7 +16,6 @@ const Catalog = (props: { data: ItemTypes[] }) => {
   const lastItemIndex = currentPage * itemsPerPage;
   const firstItemIndex = lastItemIndex - itemsPerPage;
   const currentItems = items.slice(firstItemIndex, lastItemIndex);
-
 
   /* Сортировка */
   const sortProducts: { value: string; name: string }[] = [
@@ -31,29 +29,30 @@ const Catalog = (props: { data: ItemTypes[] }) => {
 
   function nameAsc(arr: ItemTypes[]) {
     let itmArr = [...arr];
-    itmArr.sort((a, b) => a.product_name > b.product_name ? 1 : -1)
+    itmArr.sort((a, b) => a.product_name > b.product_name ? 1 : -1);
     setItems(itmArr);
   }
 
   function nameDesc(arr: ItemTypes[]) {
     let itmArr = [...arr];
-    itmArr.sort((a, b) => a.product_name < b.product_name ? 1 : -1)
+    itmArr.sort((a, b) => a.product_name < b.product_name ? 1 : -1);
     setItems(itmArr);
   }
 
   function priceAsc(arr: ItemTypes[]) {
     let itmArr = [...arr];
-    itmArr.sort((a, b) => a.price > b.price ? 1 : -1)
+    itmArr.sort((a, b) => a.price > b.price ? 1 : -1);
     setItems(itmArr);
   }
 
   function priceDesc(arr: ItemTypes[]) {
     let itmArr = [...arr];
-    itmArr.sort((a, b) => a.price < b.price ? 1 : -1)
+    itmArr.sort((a, b) => a.price < b.price ? 1 : -1);
     setItems(itmArr);
   }
 
   function handleSortClick(event: React.MouseEvent<HTMLSelectElement, MouseEvent>) {
+    event.preventDefault();
     const target = event.target as HTMLSelectElement;
     if (target.value === "nameAsc") {
       return nameAsc(items);
@@ -71,7 +70,6 @@ const Catalog = (props: { data: ItemTypes[] }) => {
   }
 
   useEffect(() => { setItems(props.data) }, []);
-
 
   /* Цена */
   function filterArrayByPrice(arr: ItemTypes[], numA: number | null, numB: number | null) {
@@ -287,7 +285,6 @@ const Catalog = (props: { data: ItemTypes[] }) => {
         <div className="main-catalog">
 
           <div className="aside">
-
             <div className="catalog-section-parameters">
               <h2 className="parameters-header">Подбор по параметрам</h2>
               <p className="parameters-price">Цена ₸</p>
@@ -301,7 +298,7 @@ const Catalog = (props: { data: ItemTypes[] }) => {
               <h3 className="">Производитель</h3>
               <input type="text" value={text} onChange={e => setText(e.target.value)} className="catalog-input-search" placeholder="Поиск..." />
               <button type='submit' onClick={handleOnclick} className="search">
-                <img className="catalog-search-icon" src='http://localhost:3000/search-icon.svg' alt="" />
+                <img className="catalog-search-icon" src={searchIcon} alt="" />
               </button>
             </div>
 
@@ -309,9 +306,9 @@ const Catalog = (props: { data: ItemTypes[] }) => {
             <div className='list-checkbox'>
               {manufacturersArray.map((type: any, id: number) => (
                 <label key={id}>
-                  <input type="checkbox" className='checkbox' value={type.title}/>
+                  <input type="checkbox" className='checkbox' value={type.title} />
                   {type.title}
-                  </label>
+                </label>
               ))}
             </div>
 
@@ -322,7 +319,9 @@ const Catalog = (props: { data: ItemTypes[] }) => {
                 <button onClick={handleShowResults} className="catalog-show-button">Показать цену</button>
               </div>
               <div>
-                <button onClick={handleClearResults} className="catalog-delete-button"><img className="catalog-delete-icon" src='http://localhost:3000/trash-button.svg' alt="" /></button>
+                <button onClick={handleClearResults} className="catalog-delete-button">
+                  <img className="catalog-delete-icon" src={trashButton} alt="" />
+                </button>
               </div>
             </div>
 
@@ -383,6 +382,5 @@ const Catalog = (props: { data: ItemTypes[] }) => {
 
   )
 }
-
 
 export default Catalog;
