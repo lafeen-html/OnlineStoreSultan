@@ -65,7 +65,7 @@ const ItemBasket = ({
                 <img className="basket-image_url" src={image_url} alt="{brand}" />
                 <div className="basket-item-main">
                     <div className="basket-info">
-                        <h6 className="basket-item-size"><img src={itemImg} />{size} <span>{size_type}</span></h6>
+                        <h6 className="basket-item-size"><img className="basket-item-sizeimg" src={itemImg} />{size} <span>{size_type}</span></h6>
                         <div className="basket-info-text">
                             <Link to={`/`}>
                                 <h2 className="basket-item-name"><span className="item-span">{brand} </span> {description}</h2>

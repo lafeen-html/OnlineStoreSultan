@@ -7,6 +7,7 @@ import Item from "../components/Item";
 import Paginator from '../components/Paginator';
 import searchIcon from './/../images/search-icon.svg';
 import trashButton from './/../images/trash-button.svg';
+import { sortProducts, manufacturersArray, careTypesArray } from '../components/ExportData';
 
 
 const Catalog = (props: { data: ItemTypes[] }) => {
@@ -18,15 +19,6 @@ const Catalog = (props: { data: ItemTypes[] }) => {
   const currentItems = items.slice(firstItemIndex, lastItemIndex);
 
   /* Сортировка */
-  const sortProducts: { value: string; name: string }[] = [
-    { value: "", name: "" },
-    { value: "nameAsc", name: "Название по возрастанию" },
-    { value: "nameDesc", name: "Название по убыванию" },
-    { value: "priceAsc", name: "Сначала дешёвые" },
-    { value: "priceDesc", name: "Сначала дорогие" },
-
-  ]
-
   function nameAsc(arr: ItemTypes[]) {
     let itmArr = [...arr];
     itmArr.sort((a, b) => a.product_name > b.product_name ? 1 : -1);
@@ -91,20 +83,15 @@ const Catalog = (props: { data: ItemTypes[] }) => {
   const [text, setText] = useState('');
   const findItems = [...items].filter(i => i.manufacturer == text);
   const handleOnclick = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    const target = event.target as HTMLButtonElement;
+    let searchInput: NodeListOf<HTMLInputElement> = document.querySelectorAll(".catalog-input-search");
+    console.log(searchInput);
     if (text !== '' && event.type === 'click') {
       setItems(findItems);
     }
   }
 
   /* Чекбоксы */
-  const manufacturersArray: { title: string; active: boolean }[] = [
-    { title: 'Synergetic', active: false },
-    { title: 'Bioderma', active: false },
-    { title: 'Ducray', active: false },
-    { title: "Johnson's Baby", active: false },
-    { title: 'VICHY', active: false },
-  ];
-
   function filterArrayByManufacturers(arr: ItemTypes[], manufacturer: string[]) {
     let copyArr = [...arr];
     copyArr = copyArr.filter((el) => {
@@ -119,7 +106,7 @@ const Catalog = (props: { data: ItemTypes[] }) => {
     return copyArr;
   }
 
-  /* Кнопка "Показать все" */
+  /* Кнопка "Показать" */
   function handleShowCheckbox(e: React.MouseEvent<HTMLButtonElement>) {
     setCurrentPage(1);
     const target = e.target as HTMLButtonElement;
@@ -138,13 +125,6 @@ const Catalog = (props: { data: ItemTypes[] }) => {
   }
 
   /* Категории ухода*/
-  const careTypesArray: { name: string; id: string }[] = [
-    { name: "Уход за телом", id: "care-body" },
-    { name: "Уход за руками", id: "care-hands" },
-    { name: "Уход за ногами", id: "care-legs" },
-    { name: "Уход за лицом", id: "care-face" },
-  ]
-
   function filterArrayByCare(arr: ItemTypes[], care_type: string) {
     let copyArr = [...arr];
     copyArr = copyArr.filter((el) => el.care_type.includes(care_type));
@@ -312,7 +292,7 @@ const Catalog = (props: { data: ItemTypes[] }) => {
               ))}
             </div>
 
-            <button type='submit' className='button-show-checkbox' onClick={handleShowCheckbox}>Показать все ✔</button>
+            <button type='submit' className='button-show-checkbox' onClick={handleShowCheckbox}>Показать</button>
 
             <div className="catalog-buttons">
               <div>

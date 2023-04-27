@@ -26,6 +26,12 @@ h1 .basket-title {
     width: 153px;
 }
 
+.basket-body{
+    text-align: center;
+    margin-bottom: 50px;
+
+}
+
 @media (max-width: 900px) {
     .basket-title-text {
         margin-top: 120px;
