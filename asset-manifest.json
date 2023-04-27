@@ -1,0 +1,38 @@
+{
+  "files": {
+    "main.css": "/OnlineStoreSultan/static/css/main.10e22883.css",
+    "main.js": "/OnlineStoreSultan/static/js/main.9bbc6936.js",
+    "static/media/contacts-girl.svg": "/OnlineStoreSultan/static/media/contacts-girl.8ad257690e39c83cc9d8894d80b388da.svg",
+    "static/media/sultan-logo-header.svg": "/OnlineStoreSultan/static/media/sultan-logo-header.a471bf0e3b2bba2a1fcf93b12193e894.svg",
+    "static/media/sultan-logo-footer.svg": "/OnlineStoreSultan/static/media/sultan-logo-footer.444b5e047ce0c611988e9eeb45e28727.svg",
+    "static/media/MasterCard-logo.svg": "/OnlineStoreSultan/static/media/MasterCard-logo.87a359d2bd048b9dbcbbc06bb45ddbc1.svg",
+    "static/media/whatsapp-icon.svg": "/OnlineStoreSultan/static/media/whatsapp-icon.db4fdea63d5ac10f8039908e900cc30f.svg",
+    "static/media/purshase-basket.svg": "/OnlineStoreSultan/static/media/purshase-basket.7ed457cb11299fa7c86996f985fabd43.svg",
+    "static/media/basket-icon.svg": "/OnlineStoreSultan/static/media/basket-icon.a4903e92416ec455cdd9ef406eb15a19.svg",
+    "static/media/trash-button.svg": "/OnlineStoreSultan/static/media/trash-button.9a8622158eebb6cebb7a8a49ebaa6629.svg",
+    "static/media/Visa-logo.svg": "/OnlineStoreSultan/static/media/Visa-logo.70a99b220909b0c9f819e96bbca3632c.svg",
+    "static/media/share.svg": "/OnlineStoreSultan/static/media/share.c7ea557134a8977c1abbf2213e507dea.svg",
+    "static/media/mail-icon.svg": "/OnlineStoreSultan/static/media/mail-icon.8034b8d0cc942d91e5c46dfbc0065032.svg",
+    "static/media/bottle.svg": "/OnlineStoreSultan/static/media/bottle.6877fce18dd3cc68b930073c312225e0.svg",
+    "static/media/box-open.svg": "/OnlineStoreSultan/static/media/box-open.f9a356492718e6a17ada8c78a0623d26.svg",
+    "static/media/telegram-icon.svg": "/OnlineStoreSultan/static/media/telegram-icon.d73a08c9ec93bb35020b29b320fb48d0.svg",
+    "static/media/location-icon.svg": "/OnlineStoreSultan/static/media/location-icon.ec04586f0556e2f765a6ddeba9adf73c.svg",
+    "static/media/catalog-frame.svg": "/OnlineStoreSultan/static/media/catalog-frame.4756189f8fb2f4cdf0b38c581c7033d8.svg",
+    "index.html": "/OnlineStoreSultan/index.html",
+    "static/media/search-icon.svg": "/OnlineStoreSultan/static/media/search-icon.8ccdf0814cd4cac3b494d27af02aeabe.svg",
+    "static/media/item-price-list.svg": "/OnlineStoreSultan/static/media/item-price-list.11d3238f37bdb4da06fd293c2ccf77e4.svg",
+    "static/media/price-list-icon.svg": "/OnlineStoreSultan/static/media/price-list-icon.5e96ff0389bda2c469106116f0a58afd.svg",
+    "static/media/search-icon-arrow.svg": "/OnlineStoreSultan/static/media/search-icon-arrow.dc272fb00c0a6f28eaaf6eff166a162b.svg",
+    "static/media/arrow-left.svg": "/OnlineStoreSultan/static/media/arrow-left.8009929457bde0328f8f182170fd2c0f.svg",
+    "static/media/basket-doted-line.svg": "/OnlineStoreSultan/static/media/basket-doted-line.a135f5e6c32797be3645c066c2200739.svg",
+    "static/media/doted-line.svg": "/OnlineStoreSultan/static/media/doted-line.008106bffa0fcccfdc421d63b97b4142.svg",
+    "static/media/arrow-right.svg": "/OnlineStoreSultan/static/media/arrow-right.93ba4abe5846a231d455ec0417dd0a4b.svg",
+    "static/media/doted-line-basket.svg": "/OnlineStoreSultan/static/media/doted-line-basket.b48c1fd22db63dc32ed080bcdbe250c2.svg",
+    "main.10e22883.css.map": "/OnlineStoreSultan/static/css/main.10e22883.css.map",
+    "main.9bbc6936.js.map": "/OnlineStoreSultan/static/js/main.9bbc6936.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.10e22883.css",
+    "static/js/main.9bbc6936.js"
+  ]
+}
